@@ -14,7 +14,8 @@ function Login() {
                     <h1 className='text-center text-[30px] text-white font-bold'>Login</h1>
                     <div className="mt-5">
                         <div class="relative mb-5">
-                            <input type="email" className="peer py-3 pe-0 ps-8 block w-full bg-transparent border-t-transparent border-b-2 border-x-transparent border-b-gray-200 
+                            <input type="email" id='username'
+                                className="peer py-3 pe-0 ps-8 block w-full bg-transparent border-t-transparent border-b-2 border-x-transparent border-b-gray-200 
                                 text-md focus:border-t-transparent focus:border-x-transparent focus:border-b-blue-500 focus:ring-0 focus:outline-none
                                 disabled:opacity-50 disabled:pointer-events-none dark:border-b-gray-700 dark:text-white dark:focus:ring-gray-600 dark:focus:border-b-gray-600" 
                                 placeholder="Username" />
@@ -25,7 +26,7 @@ function Login() {
                             </div>
                         </div>
                         <div className="relative mb-5">
-                            <input type="password" 
+                            <input type="password" id='password'
                                 className="peer py-3 pe-0 ps-8 block w-full bg-transparent border-t-transparent border-b-2 border-x-transparent border-b-gray-200 text-md 
                                 focus:border-t-transparent focus:border-x-transparent focus:border-b-white focus:ring-0 focus:outline-none
                                 disabled:opacity-50 disabled:pointer-events-none dark:border-b-gray-700 dark:text-white dark:focus:border-b-gray-600" 
@@ -40,7 +41,10 @@ function Login() {
 
                    
                     <div className="mt-10">
-                        <button className='border border-1 px-[20px] py-[4px] block w-full bg-gray-400 rounded-[6px] hover:bg-gray-200'>LOGIN</button>
+                        <button className='px-[20px] py-1.5 block w-full bg-gray-200 rounded-[6px] font-bold hover:bg-gray-300 hover:text-white'>LOGIN</button>
+                    </div>
+                    <div className="my-10">
+                        <p className='text-center text-white'>Yon haven't any account? <a href="/register" className='underline text-blue-700'>Sign Up</a></p>
                     </div>
                 </div>
             </div>

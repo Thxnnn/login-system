@@ -1,10 +1,41 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 function Register() {
 
     useEffect(() => {
         document.title = "Signup";
     }, []);
+
+
+    const [signupForm, setSignupFrom] = useState('')
+
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+    const [confirmPassword, setConfirmPassword] = useState('')
+
+
+
+
+
+    const handledata = (e) => {
+        e.preventDefault();
+        console.log('username:', username);
+        console.log('password:', password);
+        console.log('confirmPassword:', confirmPassword);
+    }
+
+    const handleUsernameChange = (e) => {
+        setUsername(e.target.value);
+    };
+    
+
+    const handlePasswordChange = (e) => {
+        setPassword(e.target.value);
+    }
+    const handleConfirmPasswordChange = (e) => {
+        setConfirmPassword(e.target.value);
+    }
+
 
 
     return (
@@ -16,9 +47,12 @@ function Register() {
                     </div>
                     <h1 className='text-center text-[30px] text-white font-bold'>Signup</h1>
 
-                    <div className="mt-10">
+                    <form action="">
+                        <div className="mt-10">
+                        
                         <div className="relative mb-5">
-                            <input type="text" id="username" 
+                            <input type="text" id="username"
+                                value={username} onChange={handleUsernameChange}
                                 className="peer py-4 px-0 block w-full bg-transparent border-t-transparent border-b-2 border-x-transparent border-b-gray-200 text-sm placeholder:text-transparent 
                                 ocus:border-t-transparent focus:border-x-transparent focus:border-b-gray-500 focus:ring-0 disabled:opacity-50 disabled:pointer-events-none 
                                 dark:border-b-gray-500 dark:text-gray-900 dark:focus:ring-gray-600 dark:focus:border-b-gray-600
@@ -41,7 +75,7 @@ function Register() {
                             >Username</label>
                         </div>
                         <div className="relative mb-5">
-                            <input type="password" id="password" 
+                            <input type="password" id="password" value={password} onChange={handlePasswordChange}
                                 className="peer py-4 px-0 block w-full bg-transparent border-t-transparent border-b-2 border-x-transparent border-b-gray-200 text-sm placeholder:text-transparent 
                                 ocus:border-t-transparent focus:border-x-transparent focus:border-b-gray-500 focus:ring-0 disabled:opacity-50 disabled:pointer-events-none 
                                 dark:border-b-gray-500 dark:text-gray-900 dark:focus:ring-gray-600 dark:focus:border-b-gray-600
@@ -64,7 +98,7 @@ function Register() {
                             >Password</label>
                         </div>
                         <div className="relative mb-5">
-                            <input type="password" id="confirmpassword" 
+                            <input type="password" id="confirmpassword" value={confirmPassword} onChange={handleConfirmPasswordChange}
                                 className="peer py-4 px-0 block w-full bg-transparent border-t-transparent border-b-2 border-x-transparent border-b-gray-200 text-sm placeholder:text-transparent 
                                 ocus:border-t-transparent focus:border-x-transparent focus:border-b-gray-500 focus:ring-0 disabled:opacity-50 disabled:pointer-events-none 
                                 dark:border-b-gray-500 dark:text-gray-900 dark:focus:ring-gray-600 dark:focus:border-b-gray-600
@@ -88,9 +122,15 @@ function Register() {
                         </div>
 
                         <div className="">
-                            <button className='w-full border border-1 p-2 rounded-md hover:bg-transparent hover:blur-xs text-lg font-bold'>Signup</button>
+                            <button className='w-full border border-1 p-2 rounded-md hover:bg-transparent hover:blur-xs text-lg font-bold'
+                                onClick={handledata}
+                            >
+                                Signup
+                            </button>
                         </div>
-                    </div>
+                    </div> 
+                    </form>
+                    
                 </div>
             </div>
         </>
