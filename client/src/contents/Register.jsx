@@ -73,7 +73,7 @@ function Register() {
 
     return (
         <>
-            <div className="bg-gradient-to-b from-[#f7cac9] to-[#91a8d0] lg:h-dvh flex justify-center">
+            <div className="bg-gradient-to-b from-[#f7cac9] to-[#91a8d0] h-dvh flex justify-center">
                 <div className="w-[500px] p-5  rounded-[10px] backdrop-blur-sm">
                     <div className="my-10">
                         <img src="" alt="" />
@@ -163,6 +163,9 @@ function Register() {
                                     Signup
                                 </button>
                             </div>
+                            <div className="mt-3">
+                        <p className='text-center text-white'>Yon have a account? <a href="/login" className='underline text-blue-700'>Login</a></p>
+                    </div>
                         </div>
                     </form>
 
